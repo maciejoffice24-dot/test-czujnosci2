@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Test bezpieczeństwa</title>
+</head>
+<body>
+
+<h2>To był test czujności</h2>
+
+<p>
+Link wyglądał na bezpieczny, ale prowadził w inne miejsce.<br>
+Zawsze sprawdzaj prawdziwy adres URL przed kliknięciem.
+</p>
+
+<p>
+<strong>Liczba kliknięć:</strong>
+<span id="counter">ładowanie…</span>
+</p>
+
+<script>
+fetch('https://api.countapi.xyz/get/firma_test_2026/link1')
+.then(res => res.json())
+.then(data => {
+    document.getElementById('counter').innerText = data.value;
+});
+</script>
+
+</body>
+</html>
